@@ -21,4 +21,27 @@ public class EntityTest implements Serializable {
     private String name;
     private BigDecimal value;
 
+    public UUID getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(UUID idProduct) {
+        this.idProduct = idProduct;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
 }
