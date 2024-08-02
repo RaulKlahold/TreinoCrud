@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "Tb_Test")
-
 public class EntityTest implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
