@@ -34,7 +34,7 @@ public class ProductController {
                 productRepository.findById(id);
         if(productO.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Product not found.");
+                    .body("Produto não encontrado");
         }
         return ResponseEntity.status(HttpStatus.OK)
                 .body(productO.get());
