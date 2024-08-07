@@ -6,6 +6,7 @@ import Entity.EntityTest;
 import Repository.ProductRepository;
 
 import jakarta.validation.Valid;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +44,9 @@ public class ProductController {
     public ResponseEntity<EntityTest>
     saveProduct(@RequestBody @Valid ProductDTO productDTO){
         var entityTest = new EntityTest();
+        BeanUtils.copyProperties(productDTO, entityTest);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(productRepository.save(entityTest));
 
     }
 
