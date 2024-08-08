@@ -48,8 +48,11 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(productRepository.save(entityTest));
 
+    }
 
-
+    @DeleteMapping("/products/{id}")
+    public ResponseEntity<Object>
+    deleteProduct(@PathVariable(value = "id") UUID id){
 
     }
 
