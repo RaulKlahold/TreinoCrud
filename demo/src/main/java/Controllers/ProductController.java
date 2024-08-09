@@ -65,7 +65,10 @@ public class ProductController {
     @PutMapping("/products/{id}")
     public ResponseEntity<Object>
     updateProduct(@PathVariable(value = "id") UUID id, @RequestBody @Valid ProductDTO productDTO){
-
+        Optional<EntityTest> product0 = productRepository.findById(id);
+        if(product0.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado");
+        }
     }
 
 
