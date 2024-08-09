@@ -69,6 +69,9 @@ public class ProductController {
         if(product0.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado");
         }
+        var productModel = product0.get();
+        BeanUtils.copyProperties(productDTO, productModel);
+        return ResponseEntity.status(HttpStatus.OK).body(productRepository.save(productModel));
     }
 
 
