@@ -62,4 +62,7 @@ public class ProductController {
 
     }
 
+    @PutMapping("/products/{id}")
+
+
 }
