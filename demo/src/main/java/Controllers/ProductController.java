@@ -63,6 +63,10 @@ public class ProductController {
     }
 
     @PutMapping("/products/{id}")
+    public ResponseEntity<Object>
+    updateProduct(@PathVariable(value = "id") UUID id, @RequestBody @Valid ProductDTO productDTO){
+
+    }
 
 
 }
